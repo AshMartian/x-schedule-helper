@@ -1,0 +1,46 @@
+.selector-restored {
+  box-shadow: rgb(29, 240, 75) 0px 0px 0px 1px;
+}
+
+.selector-updated {
+  box-shadow: rgb(113, 29, 240) 0px 0px 0px 1px;
+}
+
+.added-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+  width: 1.2rem;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  right: -0.4rem;
+}
+
+.added-button {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 1.00);
+    margin-right: 12px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.00);
+    border: 1px solid rgb(51, 54, 57);
+    list-style: none;
+    height: 50%;
+    width: 1.2rem;
+    padding: 5px;
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.added-button:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    list-style: none;
+    padding: 5px;
+    text-decoration: none;
+}

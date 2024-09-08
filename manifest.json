@@ -1,0 +1,43 @@
+{
+  "name": "𝕏 Schedule Helper",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Remembers previously schedule post date for x.com and adds dropdown incrementing buttons.",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png",
+    "512": "icon512.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.twitter.com/*",
+        "https://*.x.com/*",
+        "https://pro.x.com/*",
+        "https://pro.x.com/i/decks/*",
+        "https://pro.x.com/compose/post/schedule"
+      ],
+      "css": ["style.css"],
+      "js": ["remember.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://*.twitter.com/*",
+    "https://*.x.com/*",
+    "https://pro.x.com/*",
+    "https://pro.x.com/i/decks/*",
+    "https://pro.x.com/compose/post/schedule"
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "webNavigation",
+    "tabs"
+  ],
+  "action": {
+    "default_title": "𝕏 Schedule Helper"
+  }
+}
