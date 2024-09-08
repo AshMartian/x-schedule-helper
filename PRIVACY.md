@@ -26,8 +26,7 @@ By using the 𝕏 Schedule Helper extension, you acknowledge that the extension 
 We may update this Privacy Policy from time to time to reflect changes in the extension or relevant legal requirements. Any changes will be posted on this page, and we encourage users to review the policy periodically.
 
 ### 6. Contact Information
-If you have any questions about this Privacy Policy or how your data is handled, please contact us at:
-[Insert Contact Information]
+If you have any questions about this Privacy Policy or how your data is handled, please raise an issue in this repository.
 
 ---
 
