@@ -1,6 +1,10 @@
 # 𝕏 Schedule Helper
 
-Remembers the previously selected date on 𝕏 for post scheduling
+![Icon](./icon512.png)
+![Example](./example.png)
+
+Remembers the previously selected date on 𝕏 for post scheduling and adds dropdown incrementing buttons.
+This is really helpful for mass scheduling regular content on 𝕏, save yourself hundreds of clicks!
 
 ## Running this extension
 
