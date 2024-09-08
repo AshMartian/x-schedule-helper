@@ -33,11 +33,13 @@ The Extension works on x.com and pro.x.com, however it works best for 𝕏 Pro w
 𝕏 Schedule Helper operates entirely within the user's browser and **does not collect, transmit, or share any data**. The extension’s use of Chrome local storage ensures that all user data (such as scheduling preferences) is stored privately and locally, and is not accessible by any external service or server.
 
 ### How to Install:
+
+#### Web Store
 1. Install the extension from the Chrome Web Store (link will be provided upon publishing).
 2. Once installed, navigate to / refresh X and open the post scheduling dialog.
 3. The extension will automatically remember your selected scheduling date/time and allow you to adjust values using the added increment/decrement buttons.
 
-### Running this extension
+#### From the repository
 
 1. Clone this repository.
 2. Load this directory in Chrome as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
