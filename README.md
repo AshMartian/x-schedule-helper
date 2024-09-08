@@ -41,7 +41,7 @@ The Extension works on x.com and pro.x.com, however it works best for 𝕏 Pro w
 
 1. Clone this repository.
 2. Load this directory in Chrome as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
-3. Open https://developer.chrome.com.
+3. Open https://x.com.
 
 ### Contributing:
 Feel free to contribute! If you find bugs or want to add features, submit a pull request or open an issue on the GitHub repository.
