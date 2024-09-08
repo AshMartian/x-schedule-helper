@@ -62,7 +62,7 @@ function createIncrementDecrementButtons(selector) {
 
 // Function to handle selector change events
 function selectorChangeHandler(event, index) {
-  console.log("Got selector event", index, event.target.id, event.target.value);
+  // console.log("Got selector event", index, event.target.id, event.target.value);
   // Ensure the value isn't already stored
   if (storedValues[index] === event.target.value) {
     return;
@@ -98,7 +98,7 @@ const addListenersToSelectors = () => {
 
   currentSelectors.push(...selectors); // Store current selectors
 
-  console.log("Found selectors", selectors);
+  // console.log("Found selectors", selectors);
 
   // Add event listeners to new selectors
   selectors.forEach((selector, index) => {
@@ -111,12 +111,12 @@ const addListenersToSelectors = () => {
   // Retrieve and apply stored values
   selectors.forEach((selector, index) => {
     chrome.storage.local.get(`${index}`, (result) => {
-      console.log("Got stored value", index, result);
+      // console.log("Got stored value", index, result);
       if (result[index]) {
         storedValues[index] = result[index]; // Store the value in the storedValues object
         selector.value = result[index]; // Set the value of the selector to the stored value
         selector.parentElement.classList.add('selector-restored'); // Add a class to indicate that the value has been restored
-        console.log(`Restored value for ${selector.id}: ${result[index]}`);
+        // console.log(`Restored value for ${selector.id}: ${result[index]}`);
 
         const event = new Event('change', { bubbles: true });
         selector.dispatchEvent(event); // Trigger the change event to simulate user interaction
@@ -164,7 +164,7 @@ const dialogObserver = new MutationObserver((mutationsList) => {
     if (mutation.type === 'childList') {
       // Look for a dialog being added
       if (mutation.target.role === 'dialog' && mutation.target) {
-        console.log('Dialog added:', mutation);
+        // console.log('Dialog added:', mutation);
         // Stop observing the document body
         dialogObserver.disconnect();
         // Observe the dialog element
@@ -178,7 +178,7 @@ const dialogObserver = new MutationObserver((mutationsList) => {
 const checkAndRunObserver = () => {
   setTimeout(() => {
     if (window.location.pathname.includes('/compose/post/schedule')) {
-      console.log("URL contains /compose/post/schedule, starting observer");
+      // console.log("URL contains /compose/post/schedule, starting observer");
       const foundSelectors = addListenersToSelectors();
 
       if (foundSelectors.length === 0) {
@@ -189,7 +189,7 @@ const checkAndRunObserver = () => {
         });
       }
     } else {
-      console.log("URL does not contain /compose/post/schedule, no action taken", window.location.pathname);
+      // console.log("URL does not contain /compose/post/schedule, no action taken", window.location.pathname);
     }
   }, 100);
 };
