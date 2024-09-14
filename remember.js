@@ -60,15 +60,56 @@ function createIncrementDecrementButtons(selector) {
   }
 }
 
+function createRememberToggle() {
+  // Check if the toggle has already been added, if so, return
+  if (document.querySelector('.remember-toggle-wrapper')) {
+    return;
+  }
+  // Create a wrapper for the toggle
+  const toggleWrapper = document.createElement('div');
+  toggleWrapper.className = 'remember-toggle-wrapper';
+
+  // Create the toggle
+  const rememberToggle = document.createElement('input');
+  rememberToggle.type = 'checkbox';
+  rememberToggle.className = 'remember-toggle';
+  rememberToggle.id = 'remember-toggle';
+  chrome.storage.local.get('remember', ({ remember }) => {
+    rememberToggle.checked = !remember || remember === 'true'; // Set the default state to checked
+  });
+  // When the toggle is clicked, save the state to local storage
+  rememberToggle.addEventListener('change', (event) => {
+    chrome.storage.local.set({ 'remember': String(event.target.checked) });
+  });
+
+  // Create a label for the toggle
+  const rememberLabel = document.createElement('label');
+  rememberLabel.textContent = 'Remember changes';
+  rememberLabel.className = 'remember-label';
+  rememberLabel.htmlFor = 'remember-toggle';
+
+  if (currentSelectors.length > 0) {
+    // Append the toggle to the wrapper
+    toggleWrapper.appendChild(rememberToggle);
+    toggleWrapper.appendChild(rememberLabel);
+
+    // Prepend the wrapper to the first selector's parent element
+    currentSelectors[0].parentElement.parentElement.parentElement.parentElement.prepend(toggleWrapper);
+  }
+}
+
+
 // Function to handle selector change events
 function selectorChangeHandler(event, index) {
   // console.log("Got selector event", index, event.target.id, event.target.value);
   // Ensure the value isn't already stored
-  if (storedValues[index] === event.target.value) {
-    return;
-  }
-  event.target.parentElement.classList.add('selector-updated'); // Add a class to indicate that the value has been updated
-  chrome.storage.local.set({ [`${index}`]: event.target.value });
+  chrome.storage.local.get('remember', ( { remember }) => {
+    if (storedValues[index] === event.target.value || remember === "false") {
+      return;
+    }
+    event.target.parentElement.classList.add('selector-updated'); // Add a class to indicate that the value has been updated
+    chrome.storage.local.set({ [`${index}`]: event.target.value });
+  });
 }
 
 // Function to add event listeners to all elements with ids that match SELECTOR_*
@@ -99,6 +140,7 @@ const addListenersToSelectors = () => {
   currentSelectors.push(...selectors); // Store current selectors
 
   // console.log("Found selectors", selectors);
+  createRememberToggle(); // Create the remember toggle
 
   // Add event listeners to new selectors
   selectors.forEach((selector, index) => {

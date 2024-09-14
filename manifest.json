@@ -31,11 +31,7 @@
     "https://pro.x.com/compose/post/schedule"
   ],
   "permissions": [
-    "storage",
-    "activeTab",
-    "scripting",
-    "webNavigation",
-    "tabs"
+    "storage"
   ],
   "action": {
     "default_title": "𝕏 Schedule Helper"
