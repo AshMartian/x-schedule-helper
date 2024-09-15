@@ -12,6 +12,7 @@
   - When a value is loaded upon entering the schedule modal, the select input is outlined in green.
 - **Increment/Decrement Buttons**: Next to each date selector, the extension adds user-friendly buttons that allow you to easily adjust the scheduling time up or down.
   - When a select input is modified by the increment buttons, it is outlined in purple. 
+- **Toggle Remembering**: Doing a one-off post and want to continue where you left off later? Un-check "Remember Changes".
 - **Fully Local and Private**: All data, such as your scheduling preferences, are stored within your browser using Chrome's local storage. No data is transmitted to any external servers, ensuring complete privacy.
 
 The Extension works on x.com and pro.x.com, however it works best for 𝕏 Pro when going straight to this url first: https://pro.x.com/compose/post/schedule (or reloading the page after clicking schedule).
@@ -35,7 +36,7 @@ The Extension works on x.com and pro.x.com, however it works best for 𝕏 Pro w
 ### How to Install:
 
 #### Web Store
-1. Install the extension from the Chrome Web Store (link will be provided upon publishing).
+1. Install the extension from the [Chrome Web Store](https://chromewebstore.google.com/detail/%F0%9D%95%8F-schedule-helper/bdmmhpomnpmdceiiakenjljgmfikkpfe).
 2. Once installed, navigate to / refresh 𝕏 and open the post scheduling dialog.
 3. The extension will automatically remember your selected scheduling date/time and allow you to adjust values using the added increment/decrement buttons.
 
